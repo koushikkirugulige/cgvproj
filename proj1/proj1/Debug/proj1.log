@@ -1,0 +1,7 @@
+﻿  arq.cpp
+c:\users\koushik\documents\visual studio 2015\projects\proj1\proj1\arq.cpp(58): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\koushik\documents\visual studio 2015\projects\proj1\proj1\arq.cpp(66): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\koushik\documents\visual studio 2015\projects\proj1\proj1\arq.cpp(79): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\koushik\documents\visual studio 2015\projects\proj1\proj1\arq.cpp(171): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  proj1.vcxproj -> C:\Users\Koushik\Documents\Visual Studio 2015\Projects\proj1\Debug\proj1.exe
+  proj1.vcxproj -> C:\Users\Koushik\Documents\Visual Studio 2015\Projects\proj1\Debug\proj1.pdb (Full PDB)
