@@ -1,4 +1,5 @@
-#include<gl/freeglut.h>
+
+	#include<GL\glut.h>
 #include<iostream>
 #include<stdlib.h>
 using namespace std;
@@ -29,20 +30,20 @@ void disp()
 		glRectd(900,250,1100,350); //sender rectangle
 		
 		glBegin(GL_LINES);
-		//glVertex2f(1366,320);
-		//glVertex2f(1100,320);
+		glVertex2f(1366,320);
+		glVertex2f(1100,320);
 		glVertex2f(900,320);
 		glVertex2f(300,320);
 		
-		//glVertex2f(1366,300);
-		//glVertex2f(1100,300);
+		glVertex2f(1366,300);
+		glVertex2f(1100,300);
 		
 		glVertex2f(900,300);
 		glVertex2f(300,300);
-		//glVertex2f(150,350);
-		//glVertex2f(150,720);
-		//glVertex2f(170,350);
-		//glVertex2f(170,706);
+		glVertex2f(150,350);
+		glVertex2f(150,720);
+		glVertex2f(170,350);
+		glVertex2f(170,706);
 		glEnd();
 		
 		
@@ -68,7 +69,7 @@ void disp()
 		if(sucf == 1)
 		{
 			int xi=600;//to change pos of character
-			char tosend[]="Packet being sent",ack[]="Acknowledgement being sent on Successful transmission",rec[]="Packet Received";
+			char tosend[]="Packet being sent",ack[]="acknowledgement being sent on successful transmission",rec[]="Packet received";
 			glRasterPos2f(600,600);
 			for(int i=0;tosend[i] != '\0';i++)
 			{
@@ -76,11 +77,10 @@ void disp()
 			
 			}
 			glRasterPos2f(600,300);
-			glColor3f(0.502, 0.000, 0.502);
 			for(int i=870;i>=300;i-=10)
 			{	
 				int px,pxa;
-				
+				glColor3f(0,0.5,0);
 				px=i;pxa=i+30;
 				glRectd(px,301,pxa,320);
 				Sleep(50);
@@ -296,21 +296,28 @@ void sub(int ch)
 {
 //	if(ch == 1)
 }
-
-void main(int argc,char **argv)
+void menu_2(int ch)
+{
+}
+void main()
 	{
-	glutInit(&argc, argv);
 		glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
 		glutInitWindowSize(1366,706);
 		glutCreateWindow("hope");
 		myinit();
+		int menu2=glutCreateMenu(menu_2);
+		glutAddMenuEntry("succuessful",1);
+		glutAddMenuEntry("unsuccessful (packet)",2);
+		glutAddMenuEntry("unsuccessful (ack)",4);
+		
 		int menu1=glutCreateMenu(menu);
-		glutAddMenuEntry("Succuessful",1);
-		glutAddMenuEntry("Unsuccessful (packet)",2);
-		glutAddMenuEntry("Unsuccessful (ack)",4);
+		glutAddMenuEntry("succuessful",1);
+		glutAddMenuEntry("unsuccessful (packet)",2);
+		glutAddMenuEntry("unsuccessful (ack)",4);
 		glutAddMenuEntry("Quit",3);
 		glutCreateMenu(sub);
-		glutAddSubMenu("Stop and wait ARQ",menu1);
+		glutAddSubMenu("st arq",menu1);
+		glutAddSubMenu("protocol 2",menu2);
 		glutAttachMenu(GLUT_RIGHT_BUTTON);
 		glutDisplayFunc(disp);
 		glutReshapeFunc(reshape);
